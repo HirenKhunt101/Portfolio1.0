@@ -1,0 +1,127 @@
+@use 'app/themes/variables' as *;
+@use 'app/themes/mixins' as *;
+
+.section {
+    padding: $spacing-xl 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xl;
+    margin-top: $spacing-lg;
+
+    @include tablet {
+        grid-template-columns: 1fr;
+    }
+}
+
+.bio {
+    h3 {
+        font-size: 1.8rem;
+        color: $primary;
+        margin-bottom: $spacing-md;
+    }
+
+    p {
+        color: var(--text-color);
+        margin-bottom: $spacing-md;
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+
+    .stats {
+        display: flex;
+        gap: $spacing-md;
+        margin-top: $spacing-lg;
+
+        .stat-item {
+            text-align: center;
+
+            .number {
+                display: block;
+                font-size: 2rem;
+                font-weight: $font-weight-bold;
+                color: $secondary;
+            }
+
+            .label {
+                font-size: 0.9rem;
+                color: $text-muted-dark;
+            }
+        }
+    }
+}
+
+.timeline {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 15px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: rgba($primary, 0.3);
+    }
+
+    .timeline-item {
+        position: relative;
+        padding-left: 40px;
+        margin-bottom: $spacing-md;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 9px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: $primary;
+            border: 3px solid var(--bg-color);
+            z-index: 1;
+        }
+    }
+
+    .timeline-year {
+        font-size: 0.9rem;
+        color: $primary;
+        font-weight: $font-weight-bold;
+        margin-bottom: $spacing-xs;
+    }
+
+    .timeline-content {
+        @include glass(0.5, 5px);
+        padding: $spacing-md;
+        border-radius: $radius-md;
+        transition: $transition-base;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin-bottom: $spacing-xs;
+        }
+
+        p {
+            color: $text-muted-dark;
+            font-size: 0.95rem;
+
+            /* fix for light mode */
+            @media (prefers-color-scheme: light) {
+                color: #475569;
+            }
+        }
+    }
+}

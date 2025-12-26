@@ -1,0 +1,45 @@
+<section class="hero-section" id="hero">
+    <div class="container">
+        <div class="content" @staggerFadeInUp>
+            <div class="greeting">Hello, I'm</div>
+            <h1 class="name">Web Developer</h1>
+            <h2 class="role">Building digital experiences.</h2>
+            <p class="description">
+                I design and develop high-performance, scalable web applications with responsive UI design and intuitive
+                user experiences.
+            </p>
+
+            <div class="cta-group">
+                <a href="#projects" class="btn btn-primary" (click)="scrollTo('projects', $event)">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn btn-outline" (click)="scrollTo('contact', $event)">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+
+        <div class="visuals" @fadeInUp>
+            <div class="code-block glass">
+                <div class="window-controls">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <pre><code ngNonBindable>
+const developer = {
+  name: 'Your Name',
+  skills: ['Angular', 'TypeScript', 'SCSS'],
+  hardWorker: true,
+  build: () => {
+    return 'Awesome Apps';
+  }
+};
+                </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="background-glow"></div>
+</section>

@@ -1,0 +1,155 @@
+@use 'app/themes/variables' as *;
+@use 'app/themes/mixins' as *;
+
+.section {
+    padding: $spacing-xl 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: $spacing-xl;
+    margin-top: $spacing-lg;
+
+    @include tablet {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-info {
+    h3 {
+        font-size: 1.5rem;
+        margin-bottom: $spacing-md;
+        color: var(--text-color);
+    }
+
+    p {
+        color: $text-muted-dark;
+        margin-bottom: $spacing-lg;
+    }
+
+    .info-items {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-md;
+        margin-bottom: $spacing-lg;
+
+        .item {
+            display: flex;
+            align-items: center;
+            gap: $spacing-sm;
+            color: var(--text-color);
+
+            i {
+                color: $primary;
+            }
+        }
+    }
+
+    .social-links {
+        display: flex;
+        gap: $spacing-sm;
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba($primary, 0.1);
+            color: $primary;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: $transition-base;
+
+            &:hover {
+                background: $primary;
+                color: white;
+                transform: translateY(-3px);
+            }
+        }
+    }
+}
+
+.contact-form {
+    @include glass(0.5, 5px);
+    padding: $spacing-lg;
+    border-radius: $radius-lg;
+
+    .form-group {
+        position: relative;
+        margin-bottom: $spacing-md;
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: $radius-sm;
+            color: var(--text-color);
+            font-family: inherit;
+            transition: $transition-base;
+            outline: none;
+
+            &:focus {
+                border-color: $primary;
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            &.error {
+                border-color: $error;
+            }
+
+            // Floating label logic
+            &:not(:placeholder-shown)+label,
+            &:focus+label {
+                top: -10px;
+                left: 10px;
+                font-size: 0.8rem;
+                background: var(--bg-color); // Or handle background masking
+                padding: 0 4px;
+                color: $primary;
+            }
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        label {
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            color: $text-muted-dark;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+    }
+
+    .btn {
+        width: 100%;
+        padding: 1rem;
+        border-radius: $radius-sm;
+        background: $primary;
+        color: white;
+        font-weight: $font-weight-medium;
+        transition: $transition-base;
+        margin-top: $spacing-sm;
+
+        &:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        &:not(:disabled):hover {
+            background: darken($primary, 5%);
+            box-shadow: 0 4px 15px rgba($primary, 0.3);
+        }
+    }
+}

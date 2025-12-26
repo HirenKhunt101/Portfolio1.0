@@ -1,0 +1,73 @@
+@use 'app/themes/variables' as *;
+@use 'app/themes/mixins' as *;
+
+.footer {
+    background: var(--surface-color);
+    padding: $spacing-md 0;
+    margin-top: $spacing-xl;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 $spacing-md;
+    }
+
+    .content {
+        @include flex-between;
+        flex-wrap: wrap;
+        gap: $spacing-md;
+        margin-bottom: $spacing-md;
+
+        @include mobile {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    .brand {
+        h3 {
+            font-size: 1.5rem;
+            font-weight: $font-weight-bold;
+            margin-bottom: $spacing-xs;
+
+            span {
+                color: $primary;
+            }
+        }
+
+        p {
+            color: $text-muted-dark;
+            font-size: 0.9rem;
+        }
+    }
+
+    .socials {
+        display: flex;
+        gap: $spacing-md;
+
+        a {
+            color: var(--text-color);
+            transition: $transition-base;
+            font-size: 0.9rem;
+            opacity: 0.8;
+
+            &:hover {
+                color: $primary;
+                opacity: 1;
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    .copyright {
+        text-align: center;
+        padding-top: $spacing-md;
+        border-top: 1px solid rgba(128, 128, 128, 0.1);
+
+        p {
+            color: $text-muted-light;
+            font-size: 0.85rem;
+        }
+    }
+}

@@ -1,0 +1,61 @@
+@use 'variables' as *;
+
+// Glassmorphism
+@mixin glass($opacity: 0.7, $blur: 10px) {
+    background: var(--surface-color);
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
+    border: 1px solid var(--border-color);
+}
+
+@mixin glass-dark($opacity: 0.7, $blur: 10px) {
+    background: rgba(30, 41, 59, $opacity);
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+// Flexbox utilities
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+// Media Queries
+@mixin mobile {
+    @media (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+// Text Gradient
+@mixin text-gradient($gradient) {
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

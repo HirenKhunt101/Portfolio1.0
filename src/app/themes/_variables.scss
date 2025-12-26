@@ -1,0 +1,45 @@
+// Colors
+$dark-bg: #0f172a;
+$dark-surface: rgba(30, 41, 59, 0.7);
+$light-bg: #f8fafc;
+$light-surface: rgba(255, 255, 255, 0.8);
+
+$primary: #6366f1; // Indigo
+$secondary: #a855f7; // Purple
+$accent: #ec4899; // Pink
+
+$text-dark: #f1f5f9;
+$text-light: #1e293b;
+$text-muted-dark: #94a3b8;
+$text-muted-light: #64748b;
+
+$success: #22c55e;
+$error: #ef4444;
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, $primary, $secondary);
+$gradient-accent: linear-gradient(135deg, $secondary, $accent);
+$gradient-dark-glow: radial-gradient(circle at top right, rgba($primary, 0.15), transparent 40%);
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 4rem;
+$spacing-xl: 8rem;
+
+// Typography
+$font-family: 'Inter', sans-serif;
+$font-size-base: 16px;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// Border Radius
+$radius-sm: 0.5rem;
+$radius-md: 1rem;
+$radius-lg: 1.5rem;
+$radius-full: 9999px;
+
+// Transitions
+$transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

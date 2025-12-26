@@ -1,0 +1,162 @@
+@use 'app/themes/variables' as *;
+@use 'app/themes/mixins' as *;
+
+.section {
+    padding: $spacing-xl 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+}
+
+.filter-controls {
+    @include flex-center;
+    gap: $spacing-md;
+    margin-bottom: $spacing-lg;
+    flex-wrap: wrap;
+
+    button {
+        padding: 0.5rem 1.5rem;
+        border-radius: $radius-full;
+        font-size: 0.95rem;
+        font-weight: $font-weight-medium;
+        color: $text-muted-dark;
+        transition: $transition-base;
+        border: 1px solid transparent;
+
+        &:hover {
+            color: $primary;
+            background: rgba($primary, 0.1);
+        }
+
+        &.active {
+            background: $primary;
+            color: white;
+            box-shadow: 0 4px 12px rgba($primary, 0.3);
+        }
+    }
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: $spacing-lg;
+}
+
+.project-card {
+    @include glass(0.5, 5px);
+    border-radius: $radius-lg;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+        .card-image .placeholder-img {
+            transform: scale(1.05);
+        }
+    }
+
+    .card-image {
+        height: 200px;
+        background: #1e293b;
+        overflow: hidden;
+        position: relative;
+
+        .placeholder-img {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.05);
+            background: linear-gradient(135deg, rgba($primary, 0.2), rgba($secondary, 0.1));
+            transition: transform 0.5s ease;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+    }
+
+    .card-content {
+        padding: $spacing-md;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+            font-size: 1.3rem;
+            margin-bottom: $spacing-xs;
+            color: var(--text-color);
+        }
+
+        p {
+            color: $text-muted-dark;
+            font-size: 0.95rem;
+            margin-bottom: $spacing-md;
+            flex: 1;
+
+            /* fix for light mode */
+            @media (prefers-color-scheme: light) {
+                color: #475569;
+            }
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: $spacing-md;
+
+            span {
+                font-size: 0.8rem;
+                padding: 0.2rem 0.8rem;
+                background: rgba($secondary, 0.1);
+                color: $secondary;
+                border-radius: $radius-sm;
+            }
+        }
+
+        .links {
+            display: flex;
+            align-items: center;
+            gap: $spacing-md;
+            margin-top: auto;
+
+            .link-btn {
+                background: $primary;
+                color: white;
+                padding: 0.4rem 1rem;
+                border-radius: $radius-sm;
+                font-size: 0.9rem;
+                transition: $transition-base;
+
+                &:hover {
+                    background: darken($primary, 5%);
+                }
+            }
+
+            .link-icon {
+                color: $text-muted-dark;
+                font-size: 0.9rem;
+                transition: $transition-base;
+
+                &:hover {
+                    color: var(--text-color);
+                }
+            }
+        }
+    }
+}

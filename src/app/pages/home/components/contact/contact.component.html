@@ -1,0 +1,54 @@
+<section class="section contact-section" id="contact">
+    <div class="container">
+        <app-section-title title="Get In Touch" subtitle="Let's build something amazing together."></app-section-title>
+
+        <div class="content" @fadeInUp>
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>Feel free to reach out for collaborations or just a friendly hello.</p>
+
+                <div class="info-items">
+                    <div class="item">
+                        <i class="icon-mail"></i>
+                        <span>hello&#64;example.com</span>
+                    </div>
+                    <div class="item">
+                        <i class="icon-map"></i>
+                        <span>San Francisco, CA</span>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-btn"><i class="icon-github"></i></a>
+                    <a href="#" class="social-btn"><i class="icon-linkedin"></i></a>
+                    <a href="#" class="social-btn"><i class="icon-twitter"></i></a>
+                </div>
+            </div>
+
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form glass">
+                <div class="form-group">
+                    <input type="text" id="name" formControlName="name" placeholder=" "
+                        [class.error]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+                    <label for="name">Name</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" id="email" formControlName="email" placeholder=" "
+                        [class.error]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+                    <label for="email">Email</label>
+                </div>
+
+                <div class="form-group">
+                    <textarea id="message" formControlName="message" rows="4" placeholder=" "
+                        [class.error]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"></textarea>
+                    <label for="message">Message</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary" [disabled]="isSubmitting || contactForm.invalid">
+                    <span *ngIf="!isSubmitting">Send Message</span>
+                    <span *ngIf="isSubmitting">Sending...</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>

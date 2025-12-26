@@ -1,0 +1,74 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'app/themes/variables' as *;
+@use 'app/themes/mixins' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
+:root {
+    --bg-color: #{$light-bg};
+    --text-color: #{$text-light};
+    --surface-color: #{$light-surface};
+    --border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode {
+    --bg-color: #{$dark-bg};
+    --text-color: #{$text-dark};
+    --surface-color: #{$dark-surface};
+    --border-color: rgba(255, 255, 255, 0.1);
+
+    background-color: var(--bg-color); // Force re-apply
+    color: var(--text-color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-family;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba($text-muted-light, 0.3);
+    border-radius: $radius-full;
+
+    &:hover {
+        background: rgba($text-muted-light, 0.5);
+    }
+}
