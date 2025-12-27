@@ -72,3 +72,56 @@ button {
         background: rgba($text-muted-light, 0.5);
     }
 }
+
+/* Icon Mappings - Using Remix Icon */
+[class^="icon-"],
+[class*=" icon-"] {
+    font-family: 'remixicon' !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.icon-mail::before {
+    content: "\ee66";
+}
+
+/* ri-mail-line */
+.icon-map::before {
+    content: "\ef0e";
+}
+
+/* ri-map-pin-line */
+.icon-briefcase::before {
+    content: "\eaee";
+}
+
+/* ri-briefcase-line */
+.icon-book::before {
+    content: "\eab0";
+}
+
+/* ri-book-open-line */
+.icon-code::before {
+    content: "\ecaf";
+}
+
+/* ri-code-s-slash-line */
+.icon-sun::before {
+    content: "\f1bc";
+}
+
+/* ri-sun-line */
+.icon-moon::before {
+    content: "\f00e";
+}
+
+/* ri-moon-line */
+.icon-menu::before {
+    content: "\ef3e";
+}
+
+/* ri-menu-line */

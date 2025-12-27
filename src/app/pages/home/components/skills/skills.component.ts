@@ -16,17 +16,17 @@ export class SkillsComponent {
         {
             name: 'Frontend',
             icon: 'icon-code', // Placeholder class
-            skills: ['Angular 17+', 'TypeScript', 'SCSS', 'RxJS', 'NgRx', 'Tailwind', 'HTML5/CSS3']
+            skills: ['Angular', 'React', 'TypeScript', 'RxJS', 'JavaScript', 'NgRx', 'Tailwind', 'HTML', 'Bootstrap', 'CSS']
         },
         {
             name: 'Backend',
             icon: 'icon-server',
-            skills: ['Node.js', 'NestJS', 'Express', 'MongoDB', 'PostgreSQL', 'Firebase']
+            skills: ['Node.js', 'NestJS', 'Express', 'MongoDB', 'MySQL', 'Firebase', 'REST APIs', 'Microservices']
         },
         {
             name: 'Tools & DevOps',
             icon: 'icon-settings',
-            skills: ['Git', 'Docker', 'AWS', 'Jira', 'Figma', 'CI/CD']
+            skills: ['Git', 'Docker', 'AWS', 'GCP', 'Azure', 'CI/CD', 'GitLab', 'GitHub', 'Kubernetes']
         }
     ];
 }

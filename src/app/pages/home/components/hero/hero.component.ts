@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { fadeInUp, staggerFadeInUp } from '../../../../animations/element.animations';
+import { APP_CONSTANTS } from '../../../../core/constants/app.constants';
 
 @Component({
     selector: 'app-hero',
@@ -11,6 +12,8 @@ import { fadeInUp, staggerFadeInUp } from '../../../../animations/element.animat
     animations: [fadeInUp, staggerFadeInUp]
 })
 export class HeroComponent {
+    constants = APP_CONSTANTS;
+
     // Can add dynamic text or stats here
     scrollTo(id: string, event: Event) {
         event.preventDefault();

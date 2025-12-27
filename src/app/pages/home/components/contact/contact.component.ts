@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SectionTitleComponent } from '../../../../shared/components/section-title/section-title.component';
 import { fadeInUp } from '../../../../animations/element.animations';
+import { APP_CONSTANTS } from '../../../../core/constants/app.constants';
 
 @Component({
     selector: 'app-contact',
@@ -15,6 +16,8 @@ import { fadeInUp } from '../../../../animations/element.animations';
 export class ContactComponent {
     contactForm: FormGroup;
     isSubmitting = false;
+    constants = APP_CONSTANTS;
+
 
     constructor(private fb: FormBuilder) {
         this.contactForm = this.fb.group({

@@ -7,7 +7,7 @@
             <div class="column">
                 <h3 class="column-title"><i class="icon-briefcase"></i> Work Experience</h3>
                 <div class="timeline">
-                    <div class="timeline-item" *ngFor="let job of experience">
+                    <div class="timeline-item" *ngFor="let job of constants.experience.workExperience">
                         <span class="year">{{ job.year }}</span>
                         <div class="content glass">
                             <h4>{{ job.role }}</h4>
@@ -22,11 +22,11 @@
             <div class="column">
                 <h3 class="column-title"><i class="icon-book"></i> Education</h3>
                 <div class="timeline">
-                    <div class="timeline-item" *ngFor="let edu of education">
+                    <div class="timeline-item" *ngFor="let edu of constants.experience.education">
                         <span class="year">{{ edu.year }}</span>
                         <div class="content glass">
                             <h4>{{ edu.degree }}</h4>
-                            <h5>{{ edu.school }}</h5>
+                            <h5>{{ edu.university }}</h5>
                             <p>{{ edu.description }}</p>
                         </div>
                     </div>

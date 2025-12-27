@@ -2,14 +2,19 @@
     <div class="container">
         <div class="content">
             <div class="brand">
-                <h3>Portfolio<span>.</span></h3>
+                <h3> {{ constants.portfolio.name }} {{ constants.portfolio.surname }}
+                    <!-- <span>.</span> -->
+                </h3>
                 <p>Building digital experiences that matter.</p>
             </div>
 
             <div class="socials">
-                <a href="#" target="_blank" aria-label="GitHub"><i class="icon-github"></i> GitHub</a>
-                <a href="#" target="_blank" aria-label="LinkedIn"><i class="icon-linkedin"></i> LinkedIn</a>
-                <a href="#" target="_blank" aria-label="Twitter"><i class="icon-twitter"></i> Twitter</a>
+                <a href="{{constants.socials.GitHubUrl}}" target="_blank" aria-label="GitHub"><i
+                        class="icon-github"></i> GitHub</a>
+                <a href="{{constants.socials.LinkedInUrl}}" target="_blank" aria-label="LinkedIn"><i
+                        class="icon-linkedin"></i> LinkedIn</a>
+                <a href="{{constants.socials.TwitterUrl}}" target="_blank" aria-label="Twitter"><i
+                        class="icon-twitter"></i> Twitter</a>
             </div>
         </div>
 

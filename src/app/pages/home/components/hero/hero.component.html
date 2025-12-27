@@ -27,15 +27,12 @@
                     <span class="dot yellow"></span>
                     <span class="dot green"></span>
                 </div>
-                <pre><code ngNonBindable>
-const developer = {
-  name: 'Your Name',
-  skills: ['Angular', 'TypeScript', 'SCSS'],
+                <pre><code>
+const developer = &#123;
+  name: "{{ constants.portfolio.name }}",
+  skills: ['Angular', 'React', 'Node.js'],
   hardWorker: true,
-  build: () => {
-    return 'Awesome Apps';
-  }
-};
+&#125;;
                 </code></pre>
             </div>
         </div>

@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeService } from '../../core/services/theme.service';
+import { APP_CONSTANTS } from '../../core/constants/app.constants';
 
 @Component({
     selector: 'app-navbar',
@@ -12,6 +13,7 @@ import { ThemeService } from '../../core/services/theme.service';
 })
 export class NavbarComponent {
     themeService = inject(ThemeService);
+    constants = APP_CONSTANTS;
     isMenuOpen = false;
 
     links = [
@@ -19,6 +21,7 @@ export class NavbarComponent {
         { path: '/', label: 'About', fragment: 'about' },
         { path: '/', label: 'Skills', fragment: 'skills' },
         { path: '/', label: 'Projects', fragment: 'projects' },
+        { path: '/', label: 'Experience', fragment: 'experience' },
         { path: '/', label: 'Contact', fragment: 'contact' },
     ];
 

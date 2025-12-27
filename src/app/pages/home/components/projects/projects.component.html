@@ -2,19 +2,23 @@
     <div class="container">
         <app-section-title title="Featured Projects" subtitle="Some of my best work."></app-section-title>
 
-        <div class="filter-controls">
+        <!-- <div class="filter-controls">
             <button [class.active]="filter === 'all'" (click)="setFilter('all')">All</button>
             <button [class.active]="filter === 'frontend'" (click)="setFilter('frontend')">Frontend</button>
             <button [class.active]="filter === 'backend'" (click)="setFilter('backend')">Backend</button>
             <button [class.active]="filter === 'fullstack'" (click)="setFilter('fullstack')">Full Stack</button>
-        </div>
+        </div> -->
 
         <div class="projects-grid" @staggerFadeInUp>
-            <div class="project-card glass" *ngFor="let project of filteredProjects">
+            <div class="project-card glass" *ngFor="let project of constants.projects">
                 <div class="card-image">
                     <!-- Placeholder background if image missing -->
+                    @if(project.image) {
+
+                    <img [src]="project.image" [alt]="project.title" loading="lazy">
+                    } @else {
                     <div class="placeholder-img">{{ project.title[0] }}</div>
-                    <!-- <img [src]="project.image" [alt]="project.title" loading="lazy"> -->
+                    }
                 </div>
                 <div class="card-content">
                     <h3>{{ project.title }}</h3>

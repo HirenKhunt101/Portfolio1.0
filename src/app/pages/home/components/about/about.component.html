@@ -6,32 +6,32 @@
             <div class="bio" @fadeInUp>
                 <h3>Who am I?</h3>
                 <p>
-                    I am a passionate Full Stack Developer with over 5 years of experience in building digital products.
+                    I am a passionate Full Stack Developer with over 3 years of experience in building digital products.
                     I love creating intuitive, dynamic user experiences and solving complex problems with clean,
                     maintainable code.
                 </p>
                 <p>
-                    When I'm not coding, you can find me exploring new technologies, contributing to open source, or
+                    When I'm not coding, you can find me exploring new technologies, contributing to open source or
                     gaming.
                 </p>
                 <div class="stats">
                     <div class="stat-item">
-                        <span class="number">5+</span>
+                        <span class="number">{{ constants.about.stats.yearsOfExperience }}</span>
                         <span class="label">Years Exp.</span>
                     </div>
                     <div class="stat-item">
-                        <span class="number">20+</span>
+                        <span class="number">{{ constants.about.stats.projectCount }}</span>
                         <span class="label">Projects</span>
                     </div>
                     <div class="stat-item">
-                        <span class="number">10+</span>
+                        <span class="number">{{ constants.about.stats.clientCount }}</span>
                         <span class="label">Clients</span>
                     </div>
                 </div>
             </div>
 
             <div class="timeline" @staggerFadeInUp>
-                <div class="timeline-item" *ngFor="let item of timeline">
+                <div class="timeline-item" *ngFor="let item of constants.about.timeline">
                     <div class="timeline-year">{{ item.year }}</div>
                     <div class="timeline-content glass">
                         <h4>{{ item.title }}</h4>
